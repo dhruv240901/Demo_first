@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [StudentController::class,'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/addstudent', [StudentController::class,'addstudent']);
+Route::post('/storestudent', [StudentController::class,'storestudent']);
+Route::get('/showstudent/{id}', [StudentController::class,'showstudent']);
+Route::get('/editstudent/{id}', [StudentController::class,'editstudent']);
+Route::put('/updatestudent/{id}', [StudentController::class,'updatestudent']);
+Route::delete('/deletestudent/{id}', [StudentController::class,'deletestudent']);
+
+
