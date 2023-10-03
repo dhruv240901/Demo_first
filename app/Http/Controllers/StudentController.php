@@ -23,8 +23,8 @@ class StudentController extends Controller
     public function storestudent(Request $request){
         $validated = $request->validate([
             'name'=>'required',
-            'phone'=>'required|max:10',
-            'email'=>'required',
+            'phone'=>'required|max:10|min:10',
+            'email'=>'required|email',
             'address'=>'required|max:50',
         ]);
 
@@ -70,7 +70,7 @@ class StudentController extends Controller
         $student=Student::findOrFail($request->id);
         $validated = $request->validate([
             'name'=>'required',
-            'phone'=>'required|max:10',
+            'phone'=>'required|max:10|min:10',
             'email'=>'required',
             'address'=>'required|max:50'
         ]);

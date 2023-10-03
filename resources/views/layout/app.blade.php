@@ -8,7 +8,11 @@
 
         @include('include.css')
         @include('include.js')
-
+        <script>
+            $(document).ready( function() {
+                $('#message').delay(3000).fadeOut();
+            });
+            </script>
     </head>
     <body class="antialiased">
         @yield('content')

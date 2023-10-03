@@ -56,6 +56,7 @@ $('#addstudent').validate({
         phone:{
             required:true,
             maxlength:10,
+            minlength:10,
             number:true
         },
         email:{
@@ -72,6 +73,7 @@ $('#addstudent').validate({
         phone:{
             required:"Please enter your phone number",
             maxlength:"Please enter valid phone number",
+            minlength:"Please enter valid phone number",
             number:"Please enter valid phone number"
         },
         email:{
